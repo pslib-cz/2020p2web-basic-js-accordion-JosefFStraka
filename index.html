@@ -87,7 +87,7 @@
                             </label>
                         </div>
                     </div>
-                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container">
+                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container hidden">
                         <div class="vypujcka-container-icon-mobile">
                             <a class="icon-active-mobile icon-active-mobile-pen" href="#"><span
                                     class="icon-edit-pen"></span></a>
@@ -135,7 +135,7 @@
                             </label>
                         </div>
                     </div>
-                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container">
+                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container hidden">
                         <div class="detail-vypujcky-item">
                             <div class="kosik-img-container">
                                 <img class="kosik-nahled-img" src="img/Panasonic_HC-X920_7ce7.jpg" alt="">
@@ -178,10 +178,15 @@
                                 <span class="icon-minus checked"></span>
                                 <span class="icon-plus unchecked"></span>
                             </label>
+                            <label class="plus-detail-checkbox">
+                                <input type="checkbox"></input>
+                                <span class="icon-minus checked"></span>
+                                <span class="icon-plus unchecked"></span>
+                            </label>
                         </div>
                     </div>
 
-                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container">
+                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container hidden">
                         <div class="detail-vypujcky-item">
                             <div class="kosik-img-container">
                                 <img class="kosik-nahled-img" src="img/Panasonic_HC-X920_7ce7.jpg" alt="">
@@ -194,6 +199,8 @@
                                 </p>
                             </div>
                         </div>
+                    </div>
+                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container hidden">
                         <div class="detail-vypujcky-item">
                             <div class="kosik-img-container">
                                 <img class="kosik-nahled-img" src="img/Sigma18-50_f918-min-min.jpg" alt="">
@@ -226,8 +233,6 @@
         </footer>
     </div>
     <script>
-        //for (let el of document.getElementsByClassName("detail-vypujcky-container")) { el.style.height = "0px"; }
-
         let elements = document.getElementsByClassName("vypujcka-item");
         for (let element of elements) {
             let details = element.getElementsByClassName("detail-vypujcky-container");
@@ -238,8 +243,8 @@
             let max_i = Math.min(details.length, detail_buttons.length);
             for (let i = 0; i < max_i; i++)
             {
-                //details[i].style.display = "block"
                 detail_buttons[i].onclick = () => {
+                    //details[i].classList.toggle("hidden")
                     if (detail_buttons[i].checked) { details[i].style.height = details[i].scrollHeight + "px" }
                     else { details[i].style.height = "0px" }
                 }

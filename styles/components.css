@@ -18,7 +18,10 @@ a {
   color: var(--black);
   text-decoration: none;
 }
-
+.hidden {
+  height: 0;
+  overflow: hidden;
+}
 .logo {
   padding-left: 5px;
 }
@@ -746,8 +749,6 @@ details>summary::-webkit-details-marker {
 
 .detail-vypujcky-container {
   /*display: none;*/
-  height: 0px;
-  overflow: hidden;
   transition: height 0.5s;
 }
 .detail-vypujcky-container.detail-vypujcky-container-checked {
