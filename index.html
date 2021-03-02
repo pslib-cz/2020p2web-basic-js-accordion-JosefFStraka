@@ -87,7 +87,7 @@
                             </label>
                         </div>
                     </div>
-                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container hidden">
+                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container">
                         <div class="vypujcka-container-icon-mobile">
                             <a class="icon-active-mobile icon-active-mobile-pen" href="#"><span
                                     class="icon-edit-pen"></span></a>
@@ -135,7 +135,7 @@
                             </label>
                         </div>
                     </div>
-                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container hidden">
+                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container">
                         <div class="detail-vypujcky-item">
                             <div class="kosik-img-container">
                                 <img class="kosik-nahled-img" src="img/Panasonic_HC-X920_7ce7.jpg" alt="">
@@ -186,7 +186,7 @@
                         </div>
                     </div>
 
-                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container hidden">
+                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container">
                         <div class="detail-vypujcky-item">
                             <div class="kosik-img-container">
                                 <img class="kosik-nahled-img" src="img/Panasonic_HC-X920_7ce7.jpg" alt="">
@@ -200,7 +200,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container hidden">
+                    <div id="detailVypujcky" class="detail-vypujcky-container-layout detail-vypujcky-container">
                         <div class="detail-vypujcky-item">
                             <div class="kosik-img-container">
                                 <img class="kosik-nahled-img" src="img/Sigma18-50_f918-min-min.jpg" alt="">
@@ -218,7 +218,6 @@
                     </div>
                 </div>
             </div>
-
         </main>
 
         <footer class="main-footer-layout main-footer">
@@ -238,15 +237,17 @@
             let details = element.getElementsByClassName("detail-vypujcky-container");
             let detail_buttons = element.getElementsByTagName("input");
 
-            console.assert(details.length === detail_buttons.length, "%c[W] vypujcka-item: detail doesnt match input number!", 'background: #222; color: #ee2')
+            console.assert(details.length === detail_buttons.length, "%cvypujcka-item: \"detail-vypujcky-container\" count doesnt match \"input\" TagName count!", 'background: #222; color: #ee2')
 
             let max_i = Math.min(details.length, detail_buttons.length);
-            for (let i = 0; i < max_i; i++)
-            {
+            for (let i = 0; i < max_i; i++) {
                 detail_buttons[i].onclick = () => {
-                    //details[i].classList.toggle("hidden")
-                    if (detail_buttons[i].checked) { details[i].style.height = details[i].scrollHeight + "px" }
-                    else { details[i].style.height = '' }
+                    if (detail_buttons[i].checked) {
+                        details[i].style.height = details[i].scrollHeight + "px"
+                    }
+                    else {
+                        details[i].style.height = ''
+                    }
                 }
             };
         };
