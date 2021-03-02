@@ -225,6 +225,27 @@
             </div>
         </footer>
     </div>
+    <script>
+        //for (let el of document.getElementsByClassName("detail-vypujcky-container")) { el.style.height = "0px"; }
+
+        let elements = document.getElementsByClassName("vypujcka-item");
+        for (let element of elements) {
+            let details = element.getElementsByClassName("detail-vypujcky-container");
+            let detail_buttons = element.getElementsByTagName("input");
+
+            console.assert(details.length === detail_buttons.length, "%c[W] vypujcka-item: detail doesnt match input number!", 'background: #222; color: #ee2')
+
+            let max_i = Math.min(details.length, detail_buttons.length);
+            for (let i = 0; i < max_i; i++)
+            {
+                //details[i].style.display = "block"
+                detail_buttons[i].onclick = () => {
+                    if (detail_buttons[i].checked) { details[i].style.height = details[i].scrollHeight + "px" }
+                    else { details[i].style.height = "0px" }
+                }
+            };
+        };
+    </script>
 </body>
 
 </html>
